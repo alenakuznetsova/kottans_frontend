@@ -9,5 +9,4 @@
 
 ## Test task 1
 
-
-[Test task 1_1](https://github.com/alenakuznetsova/kottans_frontend/blob/master/task_1/task_1_1.png)
+ 1. [Linux Command Line Basics](https://github.com/alenakuznetsova/kottans_frontend/blob/master/task_1/task_1_1.png)
