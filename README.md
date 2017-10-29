@@ -10,3 +10,4 @@
 ## Test task 1
 
  1. [Linux Command Line Basics](https://github.com/alenakuznetsova/kottans_frontend/blob/master/task_1/task_1_1.png)
+ 2. [Configuring Linux Web Servers](https://github.com/alenakuznetsova/kottans_frontend/blob/master/task_1/task_1_2.png)
