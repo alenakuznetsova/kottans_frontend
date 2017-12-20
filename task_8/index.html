@@ -9,7 +9,9 @@
 </head>
 <body>
     <div id="main">
-        <ul id="matrix"></ul>
+        <ul id="matrix">
+            <li id="id_1"></li>
+        </ul>
     </div>
 
     <script>
@@ -19,10 +21,39 @@
             this.front = front;         
         }
 
-        var img1 = new Image();
-        img1.id = 1;
+        var img_1 = new Image();
+        img_1.id = id_1;
+        img_1.front = 0;
 
-        console.log(img1);
+        var img_2 = new Image();
+        img_2.id = id_2;
+        img_2.front = 0;
+
+        var img_3 = new Image();
+        img_3.id = id_3;
+        img_3.front = 0;
+
+        var img_4 = new Image();
+        img_4.id = id_4;
+        img_4.front = 0;
+
+        var img_5 = new Image();
+        img_5.id = id_5;
+        img_5.front = 0;
+
+        var img_6 = new Image();
+        img_6.id = id_6;
+        img_5.front = 0;
+
+        console.log(img_1);
+
+        function printImg(img) {
+            var list = document.getElementById('matrix');
+            var newLi = document.createElement('li');
+            newLi.id = img.id;
+            newLi.style.background = img.front;
+            list.appendChild(newLi);
+        }
 
 
     </script>
