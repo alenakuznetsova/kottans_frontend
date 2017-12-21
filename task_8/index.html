@@ -6,56 +6,85 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Memory pair game</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 </head>
 <body>
-    <div id="main">
-        <ul id="matrix">
-            <li id="id_1"></li>
-        </ul>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-10">
+                <h1 class="title text-center">Memory pair game</h1>
+            </div>
+        </div>
+        <div class="row justify-content-md-center mx-auto">
+            <center>
+                <div class="col-md-12">
+                    <ul id="matrix"></ul>
+                </div>
+            </center>
+        </div>
     </div>
-
     <script>
-        function Image (id, open, front){
-            this.id = id;
+        var arr = [];
+
+        function Image (src){
+            this.id = '' + (Math.floor(Math.random() * (99999 - 10000 + 1)) + 10000);            
             this.open = false;
-            this.front = front;         
+            this.src = src;           
         }
 
-        var img_1 = new Image();
-        img_1.id = id_1;
-        img_1.front = 0;
+        function addObjInArr(obj) {
+            var i = new Image(obj);
+            arr.push(i);
+            arr.push(i);
+        }
 
-        var img_2 = new Image();
-        img_2.id = id_2;
-        img_2.front = 0;
+        addObjInArr('images/batman.jpg');
+        addObjInArr('images/captain.jpg');
+        addObjInArr('images/halk.jpg');
+        addObjInArr('images/iron.jpg');
+        addObjInArr('images/superman.jpg');
+        addObjInArr('images/punisher.jpg');
 
-        var img_3 = new Image();
-        img_3.id = id_3;
-        img_3.front = 0;
+        console.log(arr);
 
-        var img_4 = new Image();
-        img_4.id = id_4;
-        img_4.front = 0;
-
-        var img_5 = new Image();
-        img_5.id = id_5;
-        img_5.front = 0;
-
-        var img_6 = new Image();
-        img_6.id = id_6;
-        img_5.front = 0;
-
-        console.log(img_1);
-
-        function printImg(img) {
+        function printImg() {
+            var arrSh = arr.shuffle();
             var list = document.getElementById('matrix');
-            var newLi = document.createElement('li');
-            newLi.id = img.id;
-            newLi.style.background = img.front;
-            list.appendChild(newLi);
+            for(var i = 0; i < arrSh.length; i++) {
+                for(var j = 0; j < 4; j++) {
+                    var newLi = document.createElement('li');
+                    list.appendChild(newLi);
+                    var newImg = document.createElement('img');
+                    newLi.appendChild(newImg);
+                    newImg.src = arrSh[j].src;
+                    newImg.className = 'img-list img-thumbnail';
+                    newImg.id = arrSh[j].id; 
+                    newImg.onclick = TurnImg;              
+                } 
+                arr.splice(0,4);                
+                var newBr = document.createElement('br');
+                list.appendChild(newBr);
+            }            
         }
 
+        Array.prototype.shuffle = function( b ){
+            var i = this.length, j, t;
+            while( i ) 
+            {
+            j = Math.floor( ( i-- ) * Math.random() );
+            t = b && typeof this[i].shuffle!=='undefined' ? this[i].shuffle() : this[i];
+            this[i] = this[j];
+            this[j] = t;
+            }
+            return this;
+        };
 
+        function TurnImg() {
+            alert('click');
+        }
+
+        printImg();
     </script>
 </body>
 </html>
