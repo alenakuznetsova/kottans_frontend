@@ -18,28 +18,20 @@
         </div>
         <div class="row justify-content-md-center mx-auto">
             <center>
-                <div class="col-md-12">
-                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                        <div class="flipper">
-                            <div class="front">
-                                <ul id="matrix"></ul>
-                            </div>
-                            <div class="back">
-                                <!-- back content -->
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-md-12">                    
+                    <ul id="matrix" class="flip-container"></ul>                    
                 </div>
             </center>
+            <div id="img"></div>
         </div>
     </div>
     <script>
         var arr = [];
 
-        function Image (src){
+        function Image (url){
             this.id = '' + (Math.floor(Math.random() * (99999 - 10000 + 1)) + 10000);            
             this.open = false;
-            this.src = src;           
+            this.url = url;           
         }
 
         function addObjInArr(obj) {
@@ -63,13 +55,23 @@
             for(var i = 0; i < arrSh.length; i++) {
                 for(var j = 0; j < 4; j++) {
                     var newLi = document.createElement('li');
+                    newLi.className = 'flipper';
                     list.appendChild(newLi);
                     var newImg = document.createElement('img');
                     newLi.appendChild(newImg);
-                    newImg.src = arrSh[j].src;
-                    newImg.className = 'img-list img-thumbnail';
+                    newImg.style.background = 'url'+ '(' + arrSh[j].url + ')' + 'center no-repeat';
+                    newImg.className = 'img-list front';
                     newImg.id = arrSh[j].id; 
-                    newImg.onclick = TurnImg;              
+                    newImg.onclick = function(){
+                        if (this.className == 'img-list front') {                
+                            this.removeAttribute("style");
+                            this.className = 'img-list back';
+                        } else this.className = 'img-list front';
+                    }; 
+                    
+                    // var newImgBack = document.createElement('img');
+                    // newLi.appendChild(newImgBack);
+                    // newImgBack.className = 'back';
                 } 
                 arr.splice(0,4);                
                 var newBr = document.createElement('br');
@@ -88,10 +90,6 @@
             }
             return this;
         };
-
-        function TurnImg() {
-            alert('click');
-        }
 
         printImg();
     </script>
