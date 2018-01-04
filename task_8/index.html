@@ -22,16 +22,30 @@
                     <ul id="matrix" class="flip-container"></ul>                    
                 </div>
             </center>
-            <div id="img"></div>
         </div>
     </div>
     <script>
         var arr = [];
+        var compareArr = [];
 
-        function Image (url){
-            this.id = '' + (Math.floor(Math.random() * (99999 - 10000 + 1)) + 10000);            
-            this.open = false;
-            this.url = url;           
+        function Image (url, name){
+            // this.id = '' + (Math.floor(Math.random() * (99999 - 10000 + 1)) + 10000);            
+            // this.open = false;
+            this.name = name;
+            this.url = url; 
+            var that = this;
+            this.change = function(){
+                var f = that.url;
+                if (this.className == 'img-list front') { 
+                    this.className = 'img-list';
+                    this.style.background = 'red';
+                    this.open = true;
+                } else {
+                    this.className = 'img-list front';
+                    this.style.background = 'url'+ '(' + f + ')' + 'center no-repeat';
+                    this.open = false;
+                } 
+            }          
         }
 
         function addObjInArr(obj) {
@@ -40,44 +54,12 @@
             arr.push(i);
         }
 
-        addObjInArr('images/batman.jpg');
-        addObjInArr('images/captain.jpg');
-        addObjInArr('images/halk.jpg');
-        addObjInArr('images/iron.jpg');
-        addObjInArr('images/superman.jpg');
-        addObjInArr('images/punisher.jpg');
-
-        console.log(arr);
-
-        function printImg() {
-            var arrSh = arr.shuffle();
-            var list = document.getElementById('matrix');
-            for(var i = 0; i < arrSh.length; i++) {
-                for(var j = 0; j < 4; j++) {
-                    var newLi = document.createElement('li');
-                    newLi.className = 'flipper';
-                    list.appendChild(newLi);
-                    var newImg = document.createElement('img');
-                    newLi.appendChild(newImg);
-                    newImg.style.background = 'url'+ '(' + arrSh[j].url + ')' + 'center no-repeat';
-                    newImg.className = 'img-list front';
-                    newImg.id = arrSh[j].id; 
-                    newImg.onclick = function(){
-                        if (this.className == 'img-list front') {                
-                            this.removeAttribute("style");
-                            this.className = 'img-list back';
-                        } else this.className = 'img-list front';
-                    }; 
-                    
-                    // var newImgBack = document.createElement('img');
-                    // newLi.appendChild(newImgBack);
-                    // newImgBack.className = 'back';
-                } 
-                arr.splice(0,4);                
-                var newBr = document.createElement('br');
-                list.appendChild(newBr);
-            }            
-        }
+        addObjInArr('images/batman.jpg', 'batman');
+        addObjInArr('images/captain.jpg', 'captain');
+        addObjInArr('images/halk.jpg', 'halk');
+        addObjInArr('images/iron.jpg', 'iron');
+        addObjInArr('images/superman.jpg', 'superman');
+        addObjInArr('images/punisher.jpg', 'punisher');
 
         Array.prototype.shuffle = function( b ){
             var i = this.length, j, t;
@@ -91,7 +73,39 @@
             return this;
         };
 
+        function printImg() {               
+            arr.shuffle();
+            var list = document.getElementById('matrix');
+            for(var i = 0; i < arr.length; i++) {
+                for(var j = 0; j < 4; j++) {
+                    var newLi = document.createElement('li');
+                    newLi.className = 'flipper';
+                    list.appendChild(newLi);
+                    var newImg = document.createElement('img');
+                    newLi.appendChild(newImg);
+                    newImg.style.background = 'url'+ '(' + arr[j].url + ')' + 'center no-repeat';
+                    newImg.className = 'img-list front';
+                    newImg.id = arr[j].id;
+                    newImg.onclick =  arr[j].change;
+                } 
+                arr.splice(0,4);                
+                var newBr = document.createElement('br');
+                list.appendChild(newBr);
+            }           
+        }    
+
+
+
+        console.log(compareArr);   
+
+        function compareImg() {
+            if(this.open === false) {
+                alert('open');
+            }
+        }
+
         printImg();
+        compareImg();
     </script>
 </body>
 </html>
