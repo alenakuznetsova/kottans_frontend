@@ -29,3 +29,6 @@
 ## Test task 6
  1. [Object Oriented JS](https://github.com/alenakuznetsova/kottans_frontend/blob/master/task_6/task_6.png)
 
+## Test task 7
+ 1. [Offline Web Applications](https://github.com/alenakuznetsova/kottans_frontend/blob/master/task_7/task_7.png)
+
