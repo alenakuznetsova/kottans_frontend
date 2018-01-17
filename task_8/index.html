@@ -18,8 +18,9 @@
         </div>
         <div class="row justify-content-md-center mx-auto">
             <center>
-                <div class="col-md-12">                    
-                    <ul id="matrix" class="flip-container"></ul>                    
+                <div class="col-md-12">    
+                    <ul class="desk">
+                    </ul>
                 </div>
             </center>
         </div>
@@ -30,25 +31,13 @@
         var compareArr = [];
 
         function Image (url, name){
-            this.id = '' + (Math.floor(Math.random() * (99999 - 10000 + 1)) + 10000);
             this.name = name;
             this.url = url; 
-            var that = this;
-            this.change = function(){
-                var f = that.url;
-                if ( this.className === 'img-list back') {                     
-                    this.style.transform = 'rotateY(180deg)';                    
-                    this.style.background = 'url'+ '(' + f + ')' + 'center no-repeat';
-                    this.className = 'img-list front';                 
-                    
-                } else {  
-                    this.style.transform = 'rotateY(0deg)';                 
-                    this.className = 'img-list back';
-                    this.style.background = 'white';
-                                     
-                } 
+            this.open = function(){                    
+                this.style.transform = 'rotateY(180deg)'; 
             }          
-        }        
+        }  
+             
 
         addObjInArr('images/batman.jpg', 'batman');
         addObjInArr('images/captain.jpg', 'captain');
@@ -56,26 +45,7 @@
         addObjInArr('images/iron.jpg', 'iron');
         addObjInArr('images/superman.jpg', 'superman');
         addObjInArr('images/punisher.jpg', 'punisher');
-
-        // this.change = function(){
-        //     var f = that.url;
-        //     if ( this.className === 'img-list back') {                     
-        //         this.style.transform = 'rotateY(180deg)';
-        //         // this.nextSibling.style.transform = 'rotateY(180deg)';                    
-        //         this.style.background = 'url'+ '(' + f + ')' + 'center no-repeat';
-        //         this.className = 'img-list front';
-        //         // this.src = ''+ url;                    
-                
-        //     } else {  
-        //         this.style.transform = 'rotateY(0deg)';
-        //         // this.nextSibling.style.transform = 'rotateY(0deg)';                 
-        //         this.className = 'img-list back';
-        //         this.nextSibling.className = 'img-list front';
-        //         this.style.background = 'white';
-                                    
-        //     } 
-        // }
-
+       
         function shuffle(o) {
             for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
             return o;
@@ -89,35 +59,34 @@
 
         function printImg() {               
             shuffle(arr);
-            var list = document.getElementById('matrix');
+            var desk = document.getElementsByClassName('desk')[0];
             for(var i = 0; i < arr.length; i++) {
                 for(var j = 0; j < 4; j++) {
-                    var newLi = document.createElement('li');
-                    newLi.className = 'flipper';
-                    list.appendChild(newLi);
+                    var container = document.createElement('li');
+                    container.className = 'flip-container';
+                    desk.appendChild(container);
+
+                    var flipper = document.createElement('div');
+                    flipper.className = 'flipper';
+                    flipper.onclick = arr[i].open; 
                     
-                    var newBackImg = document.createElement('img');
-                    newLi.appendChild(newBackImg);
-                    newBackImg.style.transform = 'rotateY(0deg)';
-                    newBackImg.className = 'img-list back';                    
-                    newBackImg.onclick = arr[j].change;
+                    container.appendChild(flipper);
+
+                    var front = document.createElement('div');
+                    front.className = 'front img-list ';
+                    flipper.appendChild(front);
+		
                     
-                    var newFrontImg= document.createElement('img');
-                    newFrontImg.id = arr[j].id;
-                    newFrontImg.className = 'img-list front';
-                    newFrontImg.style.transform = 'rotateY(0deg)';
-                    newFrontImg.onclick = arr[j].change;
-                    newLi.appendChild(newFrontImg);
+                    var back = document.createElement('div');
+                    back.className = 'back img-list '; 
+                    flipper.appendChild(back);                   
                 } 
                 arr.splice(0,4);                
                 var newBr = document.createElement('br');
-                list.appendChild(newBr);
+                desk.appendChild(newBr);
+                
             }           
         }    
-
-
-
-        // console.log(compareArr);   
 
         // function compareImg() {
         //     if(this.open === false) {
@@ -126,7 +95,6 @@
         // }
 
         printImg();
-        // compareImg();
     </script>
 </body>
 </html>
