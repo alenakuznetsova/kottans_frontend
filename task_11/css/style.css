@@ -1,38 +1,93 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #a5abc5;
+    background: #eceef4;
+}
+
 .container {
-    display: -ms-grid;
     display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
     grid-template-areas:
-    "block__left header block__right"
-    "block__left main block__right"
+    ". header ."
+    ". main ."
     "footer footer footer"
 }
 
 .header {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    align-items: center;
+    justify-content: center;
     grid-area: header;
-    background: grey;
-    color: black;
+
+    background: #eceef4;
+    color: #a5abc5;    
+    padding: 50px 0;    
 }
 
-.block__left {
-    grid-area: block__left;
-    background: grey;
-    color: black;
-}
+    .btn {
+        border: 1px solid #d7d9e0;
+        padding: 15px 5px;
+        color: #a5abc5; 
+        background: #eceef4; 
+        vertical-align: middle;
+        font-weight: bold;
+        border-radius: 3px;
+        font-size: 14px;
+    }
 
-.block__right {
-    grid-area: block__right;
-    background: grey;
-    color: black;
-}
+    .btn:hover {
+        box-shadow: 0 0 1px rgba(0,0,0,0.5);
+    }
+
+    .left__btn svg {
+        vertical-align: middle;
+        fill-opacity: 0.3;
+        margin-right: 4px;
+    }
+
+    .right__btn svg {
+        vertical-align: middle;
+        fill-opacity: 0.3;
+        margin-right: 4px;
+    }
+
+    .center__img {
+        width: 100px;
+        display: block;
+        margin: 0 auto;
+        width: 100px;
+    }
 
 .main {
     grid-area: main;
+
+    display: grid;
+    grid-template-columns: 3fr 1fr 2fr;
+
+    border: 1px solid #c9d0e1;
+    border-radius: 3px;
     background: white;
-    color: black;
+    color: #a5abc5;
+    padding: 10px 20px 40px;
 }
+    .order {
+        border-bottom: 1px solid #c9d0e1; 
+    }
+
+    .order-title {
+        font-size: 16px;
+    }
+
+    .order__items {
+        
+    }
 
 .footer {
     grid-area: footer;
-    background:black;
+    background: #444a62;
     color: white;
+    padding: 50px 100px;
+    margin-top: 40px;
 }
