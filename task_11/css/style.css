@@ -1,0 +1,38 @@
+.container {
+    display: -ms-grid;
+    display: grid;
+    grid-template-areas:
+    "block__left header block__right"
+    "block__left main block__right"
+    "footer footer footer"
+}
+
+.header {
+    grid-area: header;
+    background: grey;
+    color: black;
+}
+
+.block__left {
+    grid-area: block__left;
+    background: grey;
+    color: black;
+}
+
+.block__right {
+    grid-area: block__right;
+    background: grey;
+    color: black;
+}
+
+.main {
+    grid-area: main;
+    background: white;
+    color: black;
+}
+
+.footer {
+    grid-area: footer;
+    background:black;
+    color: white;
+}
