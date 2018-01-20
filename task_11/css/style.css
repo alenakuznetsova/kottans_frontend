@@ -169,12 +169,31 @@ body {
         color: #c9d0e1;
         background-color: #c9d0e1;
         width: 110%;
-        text-align: center;
         margin-left: -50px;
         margin-top: 20px;
         height: 2px;
         border: none;
     }
+
+    .main-title {
+        font-size: 17px;
+        text-align: center;
+        color: #6e768f;
+        padding-top: 50px;
+        letter-spacing: 3px;
+        font-weight: 600;
+        margin-bottom: 0; 
+    }
+
+        .main-title__underline {
+            color: #c9d0e1;
+            background-color: #c9d0e1;
+            width: 46%;
+            text-align: center;
+            margin-top: 10px;
+            height: 1px;
+            border: none;
+        }
 
 
 .footer {
