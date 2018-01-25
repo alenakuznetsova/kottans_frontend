@@ -3,11 +3,13 @@ body {
     font-size: 16px;
     color: #a5abc5;
     background: #eceef4;
+    counter-reset: heading;
 }
 
 .container {
     display: grid;
     grid-template-columns: 1fr 7fr 1fr;
+    grid-template-rows: auto;
     grid-template-areas:
     ". header ."
     ". main ."
@@ -18,6 +20,7 @@ body {
 .header {
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: auto;
     align-items: center;
     justify-content: center;
     grid-area: header;
@@ -80,6 +83,7 @@ body {
         grid-area: order;
         display: grid;
         grid-template-columns: 3fr 1fr 2fr;
+        grid-template-rows: auto;
         grid-template-areas:
         "order-title btns help"
         "table btns help";
@@ -179,9 +183,12 @@ body {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-area: main__grid;
+    padding-left: 40px;
     grid-template-areas:
-        "select-doc__title"
-        "select-doc" ;
+    "select-doc__title"
+    "select-doc"
+    "upload-files"
+    "blue1";  
 }
 
     .select-doc__title {
@@ -214,12 +221,11 @@ body {
         grid-area: select-doc;
         grid-column: 2 / 12;
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: 20px;
-        
+        grid-template-rows: auto;
+        grid-gap: 20px;        
         grid-template-areas:
-        "website document account";
-
-        padding: 50px 0 0 20px;       
+            "website document account";
+        padding: 50px 0 0 0;       
     }    
 
     .website {
@@ -262,13 +268,96 @@ body {
         top: -8px;
         line-height: 13px;
         font-size: 28px;
-        -webkit-font-smoothing: antialiased;
     }
+
+/*section 1. Upload your documents*/
+    
+    .upload-files {
+        display: grid;
+        grid-template-columns: 1fr 2.5fr 3.5fr 3fr 1fr;
+        grid-area: upload-files;
+        grid-column: 1 / 12;
+        grid-template-areas:
+            "num-1 upload-files__title upload-files__title . ."
+            ". upload__btn . . ."
+            ". upload__list upload__list upload__list upload__list";
+        padding: 40px 0;    
+    }
+    
+    /* .blue1 {
+        border: 2px solid #c9d0e1;
+        background: blue;
+        grid-area: blue1;
+    } */
+
+    .num {
+        width: 20px;
+        height: 20px;
+        color: #6e768f;
+        border: 1px solid #6e768f;
+        text-align: center;
+        vertical-align: middle;
+        padding: 8px 8px;
+        border-radius: 50%;
+        font-weight: bold;
+        margin: 10px 0 0 20px;
+        display: inline;
+    }
+
+    .num-1{
+        grid-area: num-1;
+    }
+        .num-1::before {
+            counter-increment: heading;
+            content: counter(heading);        
+        }
+
+    .upload-files__title {
+        grid-area: upload-files__title;
+        display: inline;
+    }
+
+        .upload-files__title-detils {
+            font-size: 11px;
+        }
+
+    .upload__btn{
+        grid-area: upload__btn;
+        font-size: 13px;
+        margin-top: 30px;
+    }
+
+        .upload__btn::before {
+            font-family: "Font Awesome 5 Free";
+            content: "\f382";
+            font-size: 16px;
+        }
+
+    .upload__list {
+        border: 1px solid #c9d0e1;
+        border-radius: 3px;
+        grid-area: upload__list;
+        padding: 20px 30px;
+        margin: 35px 0;
+    }    
+    .upload__table {        
+        grid-row: upload-files__list;
+        width: 100%;
+        text-align: left;
+        font-size: 12px;
+        border-spacing: 7px 11px;
+        font-weight: 600;         
+    }
+
+        .tb-center {
+            text-align: center;
+        }
 
 /*footer*/
 .footer-container {    
     display: grid;
     grid-template-columns: 1fr 7fr 1fr;
+    grid-template-rows: auto;
     grid-area: footer-container;
 
     background: #444a62;
@@ -283,6 +372,7 @@ body {
     grid-column-gap: 30px;
     grid-area: footer;    
     grid-template-columns: 1fr 1fr 1fr 1fr;    
+    grid-template-rows: auto;
     grid-template-areas:
     "what-we-do our-main-office connect-with-as bottom-logo" 
     
