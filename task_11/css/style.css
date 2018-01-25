@@ -181,14 +181,15 @@ body {
 /*select what to translate section*/
 .main__grid {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: 1.5fr repeat(11, 1fr);
     grid-area: main__grid;
-    padding-left: 40px;
     grid-template-areas:
     "select-doc__title"
     "select-doc"
     "upload-files"
-    "blue1";  
+    "choose-language"
+    "blue1"
+    "red";  
 }
 
     .select-doc__title {
@@ -270,26 +271,19 @@ body {
         font-size: 28px;
     }
 
-/*section 1. Upload your documents*/
-    
+/*section 1. Upload your documents*/    
     .upload-files {
         display: grid;
-        grid-template-columns: 1fr 2.5fr 3.5fr 3fr 1fr;
+        grid-template-columns: 1.5fr 2.5fr 3.5fr 3fr 1fr;
         grid-area: upload-files;
         grid-column: 1 / 12;
         grid-template-areas:
             "num-1 upload-files__title upload-files__title . ."
             ". upload__btn . . ."
             ". upload__list upload__list upload__list upload__list";
-        padding: 40px 0;    
+        padding-top: 50px;    
     }
     
-    /* .blue1 {
-        border: 2px solid #c9d0e1;
-        background: blue;
-        grid-area: blue1;
-    } */
-
     .num {
         width: 20px;
         height: 20px;
@@ -300,21 +294,21 @@ body {
         padding: 8px 8px;
         border-radius: 50%;
         font-weight: bold;
-        margin: 10px 0 0 20px;
-        display: inline;
+        margin: 10px 20px 0 0;
+        justify-self: end;
     }
 
-    .num-1{
-        grid-area: num-1;
-    }
-        .num-1::before {
+        .num::before {
             counter-increment: heading;
             content: counter(heading);        
         }
 
+    .num-1{
+        grid-area: num-1;
+    }       
+
     .upload-files__title {
         grid-area: upload-files__title;
-        display: inline;
     }
 
         .upload-files__title-detils {
@@ -325,6 +319,7 @@ body {
         grid-area: upload__btn;
         font-size: 13px;
         margin-top: 30px;
+        background-color: #f7f7fa
     }
 
         .upload__btn::before {
@@ -338,7 +333,7 @@ body {
         border-radius: 3px;
         grid-area: upload__list;
         padding: 20px 30px;
-        margin: 35px 0;
+        margin: 35px 0 0;
     }    
     .upload__table {        
         grid-row: upload-files__list;
@@ -352,6 +347,85 @@ body {
         .tb-center {
             text-align: center;
         }
+
+
+
+/* .blue1 {
+    display: grid;
+    grid-template-columns: 1.5fr 2.5fr 3.5fr 3fr 1fr;
+    grid-column: 2 / 12;
+    border: 2px solid #c9d0e1;
+    background: blue;
+    grid-area: blue1;
+    grid-template-areas:
+        "num-2 choose-language__title choose-language__title . .";
+    
+}
+
+.red {
+    display: grid;
+    grid-template-columns: 1.5fr 2.5fr 3.5fr 3fr 1fr;
+    grid-column: 4 / 10;
+    border: 2px solid #c9d0e1;
+    background: red;
+    grid-area: red;
+} */
+
+
+/*section 2. Choose your languages pairings*/
+.choose-language {
+    display: grid;
+    grid-template-columns: 1.5fr 0.5fr 9fr 1fr;
+    grid-area: choose-language;
+    grid-row-gap: 30px;
+    grid-column: 1 / 12;
+    grid-template-areas:
+        "num-2 choose-language__title choose-language__title ."
+        ". label_from select__from ."
+        ". label_to select__to .";
+    padding: 50px 0;    
+}
+
+    .choose-language__title {
+        grid-area: choose-language__title;
+    }
+
+    .num-2 {
+        grid-area: num-2;
+    }
+
+    .label_from,
+    .label_to {
+        font-size: 11px;
+        font-weight: bolder;
+        justify-self: end;
+        align-self: center;
+        /* margin: 30px 20px 0 0; */
+    }
+
+    .label_from{
+        grid-area: label_from; 
+        
+    }
+
+    .label_to {
+        grid-area: label_to;
+    }
+
+    .select__from {
+        grid-area: select__from;
+    }
+
+    .select__to {
+        grid-area: select__to;
+    }
+
+    .choose-language_btns {
+        margin-left: 20px;
+        padding: 10px 30px;
+        font-size: 13px;
+        background: #f7f7fa;
+    }
 
 /*footer*/
 .footer-container {    
@@ -377,7 +451,6 @@ body {
     "what-we-do our-main-office connect-with-as bottom-logo" 
     
 }
-
     .footer-title {
             font-size: 11px;
             font-weight: 900;
