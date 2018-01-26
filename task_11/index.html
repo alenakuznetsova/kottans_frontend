@@ -16,12 +16,15 @@
 <body>
     <div class="container">
         <header class="header">
-            <button class="btn left__btn"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>GO BACK</button>
+            <a class="btn left__btn">
+                <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                GO BACK
+            </a>
             <img  class="center__img" src="images/top-logo.png">
             <button class="btn right__btn"><i class="fas fa-user"></i>SIGN IN</button>
         </header>
 
-        <main class="main">
+        <form class="main">
             <section class="order">
                 <span class="order-title">
                     <i class="fa fa-shopping-bag" aria-hidden="true"></i>
@@ -118,38 +121,67 @@
                     <span class="num-2 num"></span>
                     <h3 class="choose-language__title">Choose your languages pairings</h3>
                     <span class="label_from">FROM</span>
-                    <label class="select__from">
-                        <select class=" choose-language_btns btn">
+                    <div class="select__from select-style btn-hover">
+                        <select>
                             <option>English</option>
                             <option>Deutch</option>
                             <option>Ukranian</option>
                             <option>Kurdish</option>
                             <option>Arabic</option>
                         </select>
+                    </div>
                     </label>
                     <span class="label_to">TO</span>
-                    <div class="select__to">                                                
-                        <label>
-                            <select class="btn choose-language_btns">
+                    <div class="select__to">
+                        <div class="select-style btn-hover"> 
+                            <select>
                                 <option>Arabic</option>
                                 <option>Kurdish</option>
                                 <option>English</option>
                                 <option>Deutch</option>
                                 <option>Ukranian</option>
                             </select>
-                        </label>
-                        <label class="select">
-                            <select class="btn choose-language_btns">
+                        </div>    
+                        <div class="select-style btn-hover">  
+                            <select>
                                 <option>Kurdish</option>
                                 <option>English</option>
                                 <option>Deutch</option>
                                 <option>Ukranian</option>
                             </select>
-                        </label>
-                        <button class="btn choose-language_btns button-delete">Del</button>
-                        <button class="btn choose-language_btns button">+ Add</button>
+                        </div>
+                        <i class="fas fa-trash fa-sm"></i>
+                        <button class="btn-add btn-hover" novalidate>+ ADD</button>
                     </div>                        
                 </section>
+                <section class="Select-tone">
+                    <span class="num-1 num"></span>
+                    <h3 class="upload-files__title">Upload your documents&nbsp;&nbsp;<span class="upload-files__title-detils">(Doc, Docx,Text, Pdf, Markdown)</span> </h3>
+                    <button class="btn upload__btn">&nbsp;&nbsp;Upload a new file</button>
+                    <div class="upload__list">
+                        <table class="upload__table">
+                            <tr>
+                                <th>FILE NAME</th>
+                                <th>FILE SIZE</th>
+                                <th>NUMBER OF WORDS</th>
+                                <th class="tb-center">REMOVE</th>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-file-alt fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;business_operations.docx</td>
+                                <td>78kb</td>
+                                <td>842</td>
+                                <td class="tb-center"><i class="fas fa-trash"></i></td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-file-alt fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;business_financial.docx</td>
+                                <td>26kb</td>
+                                <td>2,326</td>
+                                <td class="tb-center"><i class="fas fa-trash"></i></td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+
                 <!-- <div class="blue1">
                         <span class="num-2 num"></span>
                         <h3 class="choose-language__title">Choose your languages pairings</h3>
@@ -160,7 +192,7 @@
                     <p>red</p>
                 </div>-->
             </div>           
-        </main>
+        </form>
     
         <footer class="footer-container">
             <div class="footer">

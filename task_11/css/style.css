@@ -45,10 +45,8 @@ body {
         box-shadow: 0 0 1px rgba(0,0,0,0.5);
     }
 
-    .left__btn svg {
-        vertical-align: middle;
-        fill-opacity: 0.3;
-        margin-right: 4px;
+    .left__btn {
+        text-align: center;
     }
 
     .fa-user{
@@ -271,7 +269,7 @@ body {
         font-size: 28px;
     }
 
-/*section 1. Upload your documents*/    
+/*SECTION 1. Upload your documents*/    
     .upload-files {
         display: grid;
         grid-template-columns: 1.5fr 2.5fr 3.5fr 3fr 1fr;
@@ -372,10 +370,10 @@ body {
 } */
 
 
-/*section 2. Choose your languages pairings*/
+/*SECTION 2. Choose your languages pairings*/
 .choose-language {
     display: grid;
-    grid-template-columns: 1.5fr 0.5fr 9fr 1fr;
+    grid-template-columns: 1.5fr 0.4fr 9fr 1fr;
     grid-area: choose-language;
     grid-row-gap: 30px;
     grid-column: 1 / 12;
@@ -400,7 +398,56 @@ body {
         font-weight: bolder;
         justify-self: end;
         align-self: center;
-        /* margin: 30px 20px 0 0; */
+    }
+
+    .select-style {
+        text-align: center;
+        display: inline-block;
+        border: 1px solid #d7d8e0;
+        border-radius: 3px;
+        width: 180px;
+        background-color: #f7f7fa;
+        position: relative;
+        margin-left:20px;
+    }
+
+    .select-style select {
+        text-align-last: center;
+        padding: 1.2em 4em 1.1em 1em;
+        width: 100%;
+        border: none;
+        background: transparent;
+        background-image: none;
+        -webkit-appearance: none;
+        font-size: 13px;
+        background: #f7f7fa;
+        color: #a5abc5;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .select-style:before {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        top: 0;
+        right: 3.9em;
+        background-color: #d7d8e0;
+        pointer-events: none;
+    }
+
+    .select-style:after {
+        content: '';
+        position: absolute;
+        top: 20px;
+        right: 26px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 7px 4px 0 4px;
+        border-color: #9098b8 transparent transparent transparent;
+        pointer-events: none;
     }
 
     .label_from{
@@ -419,13 +466,30 @@ body {
     .select__to {
         grid-area: select__to;
     }
+    
+    .button-delete {
+        background: none;
+        border: none;
+        outline: none;
+    }
 
-    .choose-language_btns {
-        margin-left: 20px;
-        padding: 10px 30px;
+    .btn-add {
         font-size: 13px;
         background: #f7f7fa;
+        color: #a5abc5;
+        padding: 15px 30px;
+        text-align: center;
+        border: 1px solid #d7d8e0;
+        border-radius: 3px;
+        margin-left: 20px;
+        font-weight: bold;
     }
+
+    .btn-hover:hover {
+        box-shadow: 0 0 1px rgba(0,0,0,0.5);
+    }
+
+/*SECTION 3. Select your desired tone*/
 
 /*footer*/
 .footer-container {    
