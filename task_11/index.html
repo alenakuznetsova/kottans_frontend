@@ -154,34 +154,58 @@
                         <button class="btn-add btn-hover" novalidate>+ ADD</button>
                     </div>                        
                 </section>
-                <section class="Select-tone">
+                <section class="select-tone">
                     <span class="num-1 num"></span>
-                    <h3 class="upload-files__title">Upload your documents&nbsp;&nbsp;<span class="upload-files__title-detils">(Doc, Docx,Text, Pdf, Markdown)</span> </h3>
-                    <button class="btn upload__btn">&nbsp;&nbsp;Upload a new file</button>
-                    <div class="upload__list">
-                        <table class="upload__table">
-                            <tr>
-                                <th>FILE NAME</th>
-                                <th>FILE SIZE</th>
-                                <th>NUMBER OF WORDS</th>
-                                <th class="tb-center">REMOVE</th>
-                            </tr>
-                            <tr>
-                                <td><i class="fas fa-file-alt fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;business_operations.docx</td>
-                                <td>78kb</td>
-                                <td>842</td>
-                                <td class="tb-center"><i class="fas fa-trash"></i></td>
-                            </tr>
-                            <tr>
-                                <td><i class="fas fa-file-alt fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;business_financial.docx</td>
-                                <td>26kb</td>
-                                <td>2,326</td>
-                                <td class="tb-center"><i class="fas fa-trash"></i></td>
-                            </tr>
-                        </table>
-                    </div>
+                    <h3 class="select-tone__title">Select your desired tone</h3>
+                    <label class="select-type frendly__btn">
+                        <input required hidden type="radio" name="tone" value="friendly">
+                        <span class="select-wrapper">Friendly / Casual</span>
+                    </label>
+                    <label class="select-type corporate__btn">
+                        <input required hidden type="radio" name="tone" value="corporate">
+                        <span class="select-wrapper">Corporate / Pro</span>
+                    </label>
+                    <label class="select-type media__btn">
+                        <input required hidden type="radio" name="tone" value="media">
+                        <span class="select-wrapper">Media / Format</span>
+                    </label>
                 </section>
 
+                <section class="sign-up">
+                    <span class="num-1 num"></span>
+                    <h3 class="sign-up__title">Sign up and choose a payment method</h3>
+                    <p class="sign-up__subtitle">Already have an account with us? <a href="">Sign in</a>.</p>
+                    <div class="name">
+                        <label for="full-name">FULL NAME</label>
+                        <input type="text" name="full-name" value="" id="full-name" pattern="^[a-zA-Z ,.'-]+$" required>
+                    </div>
+                    <div class="email-pass">
+                        <div class="block">
+                            <label for="email">EMAIL ADRESS</label>
+                            <input type="email" name="email" value="" id="email" pattern="^[a-zA-Zа-яА-Я ,.'-]+$" required>
+                        </div>
+                        <div class="block">
+                            <label for="password">CHOOSE A PASSWORD</label>
+                            <input type="password" name="password" value="" id="password" pattern="^[a-zA-Zа-яА-Я ,.'-]+$" required>
+                        </div>
+                    </div>
+                    
+                    
+                    <!-- <label class="select-type frendly__btn">
+                        <input required hidden type="radio" name="tone" value="friendly">
+                        <span class="select-wrapper">Friendly / Casual</span>
+                    </label>
+                    <label class="select-type corporate__btn">
+                        <input required hidden type="radio" name="tone" value="corporate">
+                        <span class="select-wrapper">Corporate / Pro</span>
+                    </label>
+                    <label class="select-type media__btn">
+                        <input required hidden type="radio" name="tone" value="media">
+                        <span class="select-wrapper">Media / Format</span>
+                    </label> -->
+                </section>
+
+                
                 <!-- <div class="blue1">
                         <span class="num-2 num"></span>
                         <h3 class="choose-language__title">Choose your languages pairings</h3>
