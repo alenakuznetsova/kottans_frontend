@@ -3,7 +3,7 @@ body {
     line-height: 1;
     font-family: 'Nunito Sans', sans-serif;
     background-color: #eceef4;
-    font-size: 17px;
+    font-size: 16px;
     color: #a5abc5;
     background: #eceef4;
     counter-reset: heading;
@@ -14,7 +14,7 @@ a {
 }
 
 input {
-    font-size: 15px;
+    font-size: 0.9375rem;
     color: #a5abc5;
 }
 
@@ -31,7 +31,7 @@ input {
 /*header*/
 .header {
     display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-columns: 2fr 3fr 2fr;
     grid-template-rows: auto;
     align-items: center;
     justify-content: center;
@@ -39,33 +39,39 @@ input {
 
     background: #eceef4;
     color: #a5abc5;    
-    padding: 50px 0;    
+    padding: 3.125rem 0;    
 }
 
     .btn {
-        border: 1px solid #d7d9e0;
-        padding: 15px 5px;
+        border: 0.0625rem solid #d7d9e0;
+        padding: 0.9375rem 0.3125rem;
         color: #a5abc5; 
         background: #eceef4; 
         font-weight: bold;
-        border-radius: 4px;
-        font-size: 11px;
+        border-radius: 0.25rem;
+        font-size: 0.6875rem;
     }
 
     .btn:hover {
-        box-shadow: 0 0 1px rgba(0,0,0,0.5);
+        box-shadow: 0 0 0.0625rem rgba(0,0,0,0.5);
     }
 
+    .right__btn {
+        justify-self: end;
+    }
+
+    .right__btn,
     .left__btn {
         text-align: center;
+        width: 8.125rem;
     }
 
     .fa-user{
-        margin-right: 8px;
+        margin-right: 0.5rem;
     }
 
     .center__img {
-        width: 90px;
+        width: 5.625rem;
         display: block;
         margin: 0 auto;
     }
@@ -77,11 +83,11 @@ input {
     grid-template-areas:
         "order"
         "main__grid";
-    border: 2px solid #c9d0e1;
-    border-radius: 3px;
+    border: 0.125rem solid #c9d0e1;
+    border-radius: 0.25rem;
     background: white;
     color: #a5abc5;
-    padding: 0 0 40px;
+    padding: 0 0 0.4rem;
     overflow: hidden;
 
     counter-reset: section; 
@@ -95,46 +101,46 @@ input {
         grid-template-areas:
         "order-title btns help"
         "table btns help";
-        border-bottom: 2px solid #d7d9e0;
+        border-bottom: 0.125rem solid #d7d9e0;
     }
   
         .order-title {
-            font-size: 13px;
+            font-size: 0.8125rem;
             font-weight: bold;
             color: #6e768f;
-            padding: 20px 0 0 30px;
+            padding: 1.25rem 0 0 1.875rem;
             grid-area: order-title;       
         }
 
             .fa-shopping-bag {
-                margin-right: 5px;
+                margin-right: 0.3125rem;
             }
 
         .order-table {
-            padding: 0 25px 0 46px;
+            padding: 0 1.5625rem 0 2.875rem;
             grid-area: table;
         }
 
             .order-table tr {
-                font-size: 12px;
+                font-size: 0.75rem;
                 color: #6e768f;
                 text-align: left;
             }
 
             .order-table th {        
-                padding: 0px 70px 10px 0;
+                padding: 0 4.375rem 0.625rem 0;
             }
 
         .order__btn {
             grid-area: btns;
-            margin-left: -30px;
-            padding: 20px 20px 20px 0;
-            border-right: 2px solid #d7d9e0;
+            margin-left: -1.875rem;
+            padding: 1.25rem 1.25rem 1.25rem 0;
+            border-right: 0.125rem solid #d7d9e0;
         }
 
         .btn-price,
         .btn-print {
-            width: 150px;
+            width: 9.375rem;
         }
 
         .btn-price {
@@ -143,13 +149,13 @@ input {
         }
 
         .space-bottom {
-            margin-bottom: 10px;
+            margin-bottom: 0.625rem;
         }
 
         .help-center {
             grid-area: help;
-            margin-left: 40px;
-            padding: 20px 30px 0 0;
+            margin-left: 2.5rem;
+            padding: 1.25rem 1.875rem 0 0;
         }
 
             .help-text__icon {
@@ -162,31 +168,31 @@ input {
 
             .fa-life-ring{
                 float: left; 
-                margin-right: 10px;
+                margin-right: 0.625rem;
             }
 
                 .help-text__title {
-                    font-size: 12px;
+                    font-size: 0.75rem;
                     font-weight: bold;
                     margin: 0;
-                    padding: 2px 0;
+                    padding: 0.125rem 0;
                     color: #6e768f;
                 }
 
                 .help-text__main-text {
-                    font-size: 11px;
-                    margin-left: 25px;
+                    font-size: 0.6875rem;
+                    margin-left: 1.5625rem;
                     text-align: justify;
                 }
 
                 .help-text__adress a {
                     color: #a5abc5;
                     text-decoration: none;
-                    font-size: 11px;
+                    font-size: 0.6875rem;
                     font-style: normal;
                     font-weight: bold;
                     color: #6e768f;
-                    margin-left: 25px;
+                    margin-left: 1.5625rem;
                 }
 
 /*select what to translate section*/
@@ -209,10 +215,10 @@ input {
     }
 
         .main-title {        
-            font-size: 17px;
+            font-size: 1.0625rem;
             text-align: center;
             color: #6e768f;
-            padding-top: 50px;
+            padding-top: 3.125rem;
             letter-spacing: 3px;
             font-weight: 600;
             margin-bottom: 0; 
@@ -223,8 +229,8 @@ input {
             background-color: #c9d0e1;
             width: 46%;
             text-align: center;
-            margin-top: 10px;
-            height: 1px;
+            margin-top: 0.625rem;
+            height: 0.0625rem;
             border: none;
         }
 
@@ -234,10 +240,10 @@ input {
         grid-column: 2 / 12;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: auto;
-        grid-gap: 20px;        
+        grid-gap: 1.25rem;        
         grid-template-areas:
             "website document account";
-        padding: 30px 0 0 0;       
+        padding: 1.875rem 0 0 0;       
     }    
 
     .website {
@@ -266,20 +272,20 @@ input {
             "num-1 upload-files__title upload-files__title . ."
             ". upload__btn . . ."
             ". upload__list upload__list upload__list upload__list";
-        padding-top: 70px;    
+        padding-top: 4.375rem;    
     }
     
     .num {
-        width: 20px;
-        height: 20px;
+        width: 1.25rem;
+        height: 1.25rem;
         color: #6e768f;
-        border: 1px solid #6e768f;
+        border: 0.0625rem solid #6e768f;
         text-align: center;
         vertical-align: middle;
-        padding: 8px 8px;
+        padding: 0.5rem 0.5rem;
         border-radius: 50%;
         font-weight: bold;
-        margin: 10px 20px 0 0;
+        margin: 0.625rem 1.25rem 0 0;
         justify-self: end;
     }
 
@@ -297,35 +303,35 @@ input {
     }
 
         .upload-files__title-detils {
-            font-size: 11px;
+            font-size: 0.6875rem;
         }
 
     .upload__btn {
         grid-area: upload__btn;
-        font-size: 13px;
-        margin-top: 30px;
+        font-size: 0.8125rem;
+        margin-top: 1.875rem;
         background-color: #f7f7fa
     }
 
         .upload__btn::before {
             font-family: "Font Awesome 5 Free";
             content: "\f382";
-            font-size: 16px;
+            font-size: 1rem;
         }
 
     .upload__list {
-        border: 1px solid #c9d0e1;
-        border-radius: 3px;
+        border: 0.0625rem solid #c9d0e1;
+        border-radius: 0.25rem;
         grid-area: upload__list;
-        padding: 20px 30px;
-        margin: 35px 0 0;
+        padding: 1.25rem 1.875rem;
+        margin: 2.1875rem 0 0;
     }    
     .upload__table {        
         grid-row: upload-files__list;
         width: 100%;
         text-align: left;
-        font-size: 12px;
-        border-spacing: 7px 11px;
+        font-size: 0.75rem;
+        border-spacing: 0.4375rem 0.6875rem;
         font-weight: 600;         
     }
 
@@ -338,13 +344,13 @@ input {
     display: grid;
     grid-template-columns: 1.5fr 0.4fr 8.6fr 1fr;
     grid-area: choose-language;
-    grid-row-gap: 30px;
+    grid-row-gap: 1.875rem;
     grid-column: 1 / 12;
     grid-template-areas:
         "num-2 choose-language__title choose-language__title ."
         ". label_from select__from ."
         ". label_to select__to .";
-    padding: 70px 0;    
+    padding: 4.375rem 0;    
 }
 
     .choose-language__title {
@@ -357,7 +363,7 @@ input {
 
     .label_from,
     .label_to {
-        font-size: 11px;
+        font-size: 0.6875rem;
         font-weight: bolder;
         justify-self: end;
         align-self: center;
@@ -366,12 +372,12 @@ input {
     .select-style {
         text-align: center;
         display: inline-block;
-        border: 1px solid #d7d8e0;
-        border-radius: 3px;
-        width: 180px;
+        border: 0.0625rem solid #d7d8e0;
+        border-radius: 0.25rem;
+        width: 11.25rem;
         background-color: #f7f7fa;
         position: relative;
-        margin-left:20px;
+        margin-left:1.25rem;
     }
 
     .select-style select {
@@ -382,7 +388,7 @@ input {
         background: transparent;
         background-image: none;
         -webkit-appearance: none;
-        font-size: 13px;
+        font-size: 0.8125rem;
         background: #f7f7fa;
         color: #a5abc5;
         font-weight: bold;
@@ -392,7 +398,7 @@ input {
     .select-style:before {
         content: '';
         position: absolute;
-        width: 1px;
+        width: 0.0625rem;
         height: 100%;
         top: 0;
         right: 3.9em;
@@ -403,12 +409,12 @@ input {
     .select-style:after {
         content: '';
         position: absolute;
-        top: 20px;
-        right: 26px;
+        top: 1.25rem;
+        right: 1.625rem;
         width: 0;
         height: 0;
         border-style: solid;
-        border-width: 7px 4px 0 4px;
+        border-width: 0.4375rem 0.25rem 0 0.25rem;
         border-color: #9098b8 transparent transparent transparent;
         pointer-events: none;
     }
@@ -442,19 +448,19 @@ input {
     }
 
     .btn-add {
-        font-size: 13px;
+        font-size: 0.8125rem;
         background: #f7f7fa;
         color: #a5abc5;
-        padding: 15px 30px;
+        padding: 0.9375rem 1.875rem;
         text-align: center;
-        border: 1px solid #d7d8e0;
-        border-radius: 3px;
-        margin-left: 20px;
+        border: 0.0625rem solid #d7d8e0;
+        border-radius: 0.25rem;
+        margin-left: 1.25rem;
         font-weight: bold;
     }
 
     .btn-hover:hover {
-        box-shadow: 0 0 1px rgba(0,0,0,0.5);
+        box-shadow: 0 0 0.0625rem rgba(0,0,0,0.5);
     }
 
 /*SECTION 3. Select your desired tone*/
@@ -487,19 +493,19 @@ input {
 }
 
     .select-wrapper {
-        margin-top: 20px;
+        margin-top: 1.25rem;
         display: block;
-        font-size: 13px;
-        padding: 20px 25px;
-        border: 1px solid #c9d0e1;
-        border-radius: 3px;
+        font-size: 0.8125rem;
+        padding: 1.25rem 1.5625rem;
+        border: 0.0625rem solid #c9d0e1;
+        border-radius: 0.25rem;
         background: #f7f7fa;
         position: relative;
     }
 
     .select-type input:checked + .select-wrapper {
-        border: 5px solid #76a7e1;
-        border-radius: 3px;
+        border: 0.3125rem solid #76a7e1;
+        border-radius: 0.25rem;
         
     }
 
@@ -510,9 +516,9 @@ input {
         position: absolute;
         color: #76a7e1;
         background-color: white;
-        right: -15px;
-        top: -8px;
-        line-height: 13px;
+        right: -0.9375rem;
+        top: -0.5rem;
+        line-height: 0.8125rem;
         font-size: 28px;
     }
 
@@ -523,7 +529,7 @@ input {
     grid-area: sign-up;
     grid-column: 1 / 12;    
     grid-template-columns: 1.5fr 9fr 1fr;
-    grid-row-gap: 20px;
+    grid-row-gap: 1.25rem;
     grid-template-areas:
         "num-1 sign-up__title ."
         ". sign-up__subtitle ."
@@ -532,7 +538,7 @@ input {
         ". payments ."
         ". card-data ."
         ". agree agree";
-    padding-top: 70px; 
+    padding-top: 4.375rem; 
 }
 
     .sign-up__title {
@@ -553,16 +559,16 @@ input {
 
     .payments {
         grid-area: payments;
-        padding-top: 20px; 
+        padding-top: 1.25rem; 
     }
 
     .card-data {
         grid-area: card-data;
-        padding-top: 30px; 
+        padding-top: 1.875rem; 
     }
 
     .agree {
-        padding: 60px 0 20px 0;
+        padding: 3.75rem 0 1.25rem 0;
         display: flex;
         grid-area: agree;
         justify-content: flex-end;
@@ -575,49 +581,49 @@ input {
 
         .sign-up label {
             font-weight: bold;
-            padding-left: 5px;
-            line-height: 25px;
-            font-size: 11px;
+            padding-left: 0.3125rem;
+            line-height: 1.5625rem;
+            font-size: 0.6875rem;
             display: block;
         }
 
         .sign-up .name input,
         .sign-up .email-pass input {
-            padding: 10px 50px 10px 20px;
-            border: 1px solid #c9d0e1; 
-            border-radius: 3px;
+            padding: 0.625rem 3.125rem 0.625rem 1.25rem;
+            border: 0.0625rem solid #c9d0e1; 
+            border-radius: 0.25rem;
             position: relative;
             float:left;
-            margin-right: 20px;
+            margin-right: 1.25rem;
         }
 
         .sign-up .name input:valid,
         .sign-up .email-pass input:valid  {
             background: url(../images/valid.png);
             background-repeat: no-repeat;
-            background-size: 20px 20px;
-            background-position: 200px;
+            background-size: 1.25rem 1.25rem;
+            background-position: 14.375rem;
         }
 
         .sign-up .name input:invalid,
         .sign-up .email-pass input:invalid {
             background: url(../images/invalid.png);
             background-repeat: no-repeat;
-            background-size: 20px 20px;
-            background-position: 230px;
+            background-size: 1.25rem 1.25rem;
+            background-position: 14.375rem;
         }
 
     .payments label {
         display: inline-block;
         padding-left: 0;
-        margin-right: 20px;
+        margin-right: 1.25rem;
     }
 
     .payments .select-wrapper {
-        height: 80px;
-        width: 190px;
-        border: 1px solid #c9d0e1;
-        border-radius: 3px;
+        height: 5rem;
+        width: 11.875rem;
+        border: 0.0625rem solid #c9d0e1;
+        border-radius: 0.25rem;
         background-color: #f7f7fa;
         background-position: 50%;
         background-size: 6rem;
@@ -664,42 +670,42 @@ input {
 
     .card_num {
         background: url(../images/card.png) no-repeat;
-        background-size: 60px 40px;
-        background-position: 230px;
+        background-size: 3.75rem 2.5rem;
+        background-position: 14.375rem;
     }
 
     .card_num_input input {
-        padding: 10px 80px 10px 20px;
+        padding: 0.625rem 5rem 0.625rem 1.25rem;
         
     }
 
     .card_num_input input,
     .card_date_input input,
     .card_code_input input {
-        border: 1px solid #c9d0e1; 
-        border-radius: 3px;
+        border: 0.0625rem solid #c9d0e1; 
+        border-radius: 0.25rem;
         float:left;
-        margin-right: 20px;
+        margin-right: 1.25rem;
     }
 
     .card_date_input input {
         text-align: center;
-        padding: 10px;
-        width: 130px;
+        padding: 0.625rem;
+        width: 8.125rem;
     }
 
     .card_code {
         text-align: center;
-        padding: 10px;
-        width: 80px;
+        padding: 0.625rem;
+        width: 5rem;
     }
 
     .agree-margin-price {
-        margin-right: 25px;
+        margin-right: 1.5625rem;
     }
 
     .agree-margin-sign {
-        margin-right: 40px;
+        margin-right: 2.5rem;
     }
     
 /*footer*/
@@ -708,15 +714,15 @@ input {
     grid-template-columns: 1fr 7fr 1fr;
     grid-area: footer-container;
     background: #444a62;
-    margin-top: 40px;   
-    padding: 70px 0;
+    margin-top: 2.5rem;   
+    padding: 4.375rem 0;
     grid-template-areas: 
     ". footer ."
 }
 
 .footer {
     display: grid;
-    grid-column-gap: 30px;
+    grid-column-gap: 1.875rem;
     grid-area: footer;    
     grid-template-columns: 1fr 1fr 1fr 1fr;    
     grid-template-rows: auto;
@@ -725,14 +731,14 @@ input {
     
 }
     .footer-title {
-            font-size: 11px;
+            font-size: 0.6875rem;
             font-weight: 900;
-            margin-left: 15px;
+            margin-left: 0.9375rem;
         }
 
         .footer-text {
-            font-size: 10px;
-            margin-left: 36px;
+            font-size: 0.625rem;
+            margin-left: 2.25rem;
         }
 
     .what-we-do {
@@ -742,18 +748,18 @@ input {
 
     .our-main-office {
         grid-template-areas: our-main-office;
-        margin-left: 50px;
+        margin-left: 3.125rem;
         line-height: 1.35;
     }
 
     .connect-with-as {
         grid-template-areas: connect-with-as;
-        margin-left: 70px;
+        margin-left: 4.375rem;
     }
 
         .list__soc-list {
             list-style-type: none;
-            padding-left: 30px;
+            padding-left: 1.875rem;
             margin: 0;
             -webkit-margin-before: 0;
             -webkit-margin-after: 0;
@@ -770,6 +776,6 @@ input {
     }
 
         .img-logo {
-            width: 87px;
+            width: 5.4375rem;
             float: right;
         }
