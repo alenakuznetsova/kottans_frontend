@@ -205,7 +205,7 @@ input {
     "select-doc"
     "upload-files"
     "choose-language"
-    "select-tone"
+    "select_3-4"
     "sign-up";  
 }
 
@@ -464,16 +464,16 @@ input {
     }
 
 /*SECTION 3. Select your desired tone*/
-.select-tone {
+.select_3-4 {
     display: grid;
-    grid-area: select-tone;
+    grid-area: select_3-4;
     grid-column: 1 / 12;    
-    grid-template-columns: 1.5fr 2.4fr 3.6fr 3fr 1fr;
+    grid-template-columns: 1.5fr 2.4fr 1fr 1.5fr 3.6fr 1fr;
     grid-template-areas:
-        "num-1 select-tone__title select-tone__title . ."
-        ". frendly__btn . . ."
-        ". corporate__btn . . ."
-        ". media__btn . . . ";
+        "num-1 select-tone__title . num-2 tell-us__title ."
+        ". frendly__btn  . . time-line time-line"
+        ". corporate__btn . timeline-info timeline-info timeline-info"
+        ". media__btn  . timeline-info timeline-info timeline-info";
 }
 
 .select-tone__title {
@@ -490,6 +490,22 @@ input {
 
 .media__btn {
     grid-area: media__btn;
+}
+
+.tell-us__title {
+    grid-area: tell-us__title;
+}
+
+.num-2 {
+    grid-area: num-2;
+}
+
+.time-line {
+    grid-area: time-line;
+}
+
+.timeline-info {
+    grid-area: timeline-info;
 }
 
     .select-wrapper {
@@ -519,7 +535,98 @@ input {
         right: -0.9375rem;
         top: -0.5rem;
         line-height: 0.8125rem;
-        font-size: 28px;
+        font-size: 1.75rem;
+    }
+
+    input[type=range] {        
+        -webkit-appearance: none;
+        width: 90%;
+        position: relative;
+        margin: auto;
+        cursor: pointer;
+        transition: opacity 0.3s;
+    }
+    
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 1.125rem;
+        height: 1.125rem;
+        border-radius: 0.5625rem;
+        background: #edbe76;
+        margin-top: -0.25rem;
+        z-index: 2;
+        position: relative;
+    }
+    
+    input[type=range]::after {
+        content: '';
+        display: block;
+        width: 0.5625rem;
+        height: 0.5625rem;
+        border-radius: 0.25rem;
+        background: #d6d8e2;
+        position: absolute;
+        z-index: 1;
+    }
+    
+    input[type=range]:before {
+        content: '';
+        display: block;
+        width: 0.5625rem;
+        height: 0.5625rem;
+        border-radius: 0.25rem;
+        background: #d6d8e2;
+        position: absolute;
+        right: 0;
+        z-index: 1;
+    }
+    
+    input[type=range]::-webkit-slider-runnable-track {
+        -webkit-appearance: none;
+        width: 18.75rem;
+        background: #eff0f5;
+        height: 0.5625rem;
+        border-radius: 0.25rem;
+    }
+    
+    .time-line{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .time-line span {
+        width: 20%;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        font-weight: bolder;
+    }
+
+    .timeline-info {
+        border: 1px solid #e6e8ee;
+        border-radius: 0.25rem;
+        padding: 2rem;
+        margin-left: 4.375rem;
+        margin-top: 2.1875rem;
+    }
+    
+    .timeline-info h5 {
+        margin-top: 0;
+        text-transform: uppercase;
+    }
+    
+    
+    .timeline-info p {
+        line-height: 1.7;
+        font-size: 0.6875rem;
+        margin-bottom: 0;
+    }
+    
+    .timeline-info p span {
+        text-transform: uppercase;
+        color: #edbe76;
     }
 
 
@@ -780,11 +887,6 @@ input {
             float: right;
         }
 
-/* Large desktops and laptops */
-@media (min-width: 1200px) {
-
-}
-
 /* Portrait tablets and medium desktops */
 @media (min-width: 992px) and (max-width: 1199px) {
     .container {
@@ -1041,6 +1143,25 @@ input {
 
     .choose-language {
         padding: 3rem 0;
+    }
+
+    .select_3-4 {
+        display: grid;
+        grid-area: select_3-4;
+        grid-column: 1 / 12;
+        grid-template-columns: 1.5fr 9fr 1fr;
+        grid-template-areas: 
+        "num-1 select-tone__title ." 
+        ". frendly__btn ."
+        ". corporate__btn ."
+        ". media__btn ."
+        "num-2 tell-us__title ." 
+        ". time-line ." 
+        "timeline-info timeline-info .";
+    }
+
+    .time-line span {
+        padding-top: 1rem;
     }
 
     .payments .select-wrapper {
