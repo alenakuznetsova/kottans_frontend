@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Memory pair game</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 </head>
 <body>
@@ -36,8 +36,7 @@
             this.open = function(){                    
                 this.style.transform = 'rotateY(180deg)'; 
             }          
-        }  
-             
+        }             
 
         addObjInArr('images/batman.jpg', 'batman');
         addObjInArr('images/captain.jpg', 'captain');
@@ -73,12 +72,12 @@
                     container.appendChild(flipper);
 
                     var front = document.createElement('div');
-                    front.className = 'front img-list ';
-                    flipper.appendChild(front);
-		
+                    front.className = 'front';
+                    flipper.appendChild(front);		
                     
                     var back = document.createElement('div');
-                    back.className = 'back img-list '; 
+                    back.className = 'back'; 
+                    back.style.background = 'url'+ '(' + arr[j].url + ')' + 'center no-repeat';
                     flipper.appendChild(back);                   
                 } 
                 arr.splice(0,4);                
